@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   runtimeConfig: {
     public: {
-      apiBase: "https://api.sliper.ir/api"
+      apiBase: "http://localhost:8000/api"
     }
   },
   build: {

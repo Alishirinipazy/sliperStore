@@ -35,13 +35,13 @@ async function login() {
         loading.value = true;
         const data = await $fetch('/api/auth/login', {
             method: 'POST',
-            body: { cellphone: cellphone.value }
+            body: { cellphone: cellphone?.value }
         
         })
-        toast.success(`کد تایید به شماره ${cellphone.value } ارسال شد`);
+        toast.success(`کد تایید به شماره ${cellphone?.value } ارسال شد`);
         emit('showCheckOtpForm')
     } catch (error) {
-        errorMSG.value = Object.values(error.data.data.message).flat()
+        errorMSG.value = Object.values(error?.data?.data?.message).flat()
         toast.warning(`${errorMSG.value}`)
         
     }

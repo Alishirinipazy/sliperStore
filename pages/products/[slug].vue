@@ -6,7 +6,7 @@
                     <div class="row gy-5">
                         <div class="col-sm-12 col-lg-6">
                             <h3 class="fw-bold mb-4">{{ product?.data?.name }}</h3>
-                            <h5 v-if="product?.data?.is_sale" class="mb-3 " >
+                            <h5 v-if="!product?.data?.is_sale" class="mb-3 " >
                                 <del>{{ numberFormat(product?.data?.price) }} تومان</del>
                                 {{ numberFormat(product?.data?.sale_price) }}
                                 تومان
@@ -68,6 +68,7 @@
             </div>
         </div>
     </section>
+  <Comment />
     <section class="food_section my-5">
         <div class="container">
             <div class="row gx-3">
