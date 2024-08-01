@@ -10,10 +10,10 @@
 
             <Tabs nav-class="filters_menu" nav-item-active-class="active"
                 :options="{ useUrlFragment: false, disableScrollBehavior: true }">
-                <Tab v-for="(tablist, index) in products.data.tabList" :key="index" :name="tablist">
+                <Tab v-for="(tablist, index) in products?.data?.tabList" :key="index" :name="tablist">
                     <div class="filters_content">
                         <div class="row grid">
-                            <div v-for="product in products.data.tabPanel[index]" :key="product.id"
+                            <div v-for="product in products?.data?.tabPanel[index]" :key="product.id"
                                 class="col-sm-6 col-lg-4">
                                     <ProductCard :product="product" />
                             </div>
