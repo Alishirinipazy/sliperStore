@@ -21,7 +21,7 @@
                                     <nuxt-link class="nav-link" to="/" >صفحه اصلی</nuxt-link>
                                 </li>
                                 <li class="nav-item" :class="{active: $route.path==='/menu'}">
-                                    <nuxt-link class="nav-link" to="/menu">منو</nuxt-link>
+                                    <nuxt-link class="nav-link" to="/menu">محصولات</nuxt-link>
                                 </li>
                                 <li class="nav-item" :class="{active: $route.path==='/aboute'}">
                                     <nuxt-link to="/aboute" class="nav-link"  >درباره ما</nuxt-link>

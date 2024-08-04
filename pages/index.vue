@@ -1,6 +1,7 @@
 <template>
     <Slider />
-    <Feachers />
+<!--    <Feachers />-->
+    <NewFeaturs />
     <ProductTabs />
     <Abouts />
     <Contactauth />

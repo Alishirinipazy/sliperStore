@@ -8,24 +8,28 @@ const typeComment = ref({
     user1: {
       message: 'واقعا عالیه بسیار با کیفیت',
       user: 'ملینا',
+      data:'01,12,01 13:00',
       meUser: false,
       profile: '/_nuxt/public/images/profile.jpg',
     }, user2: {
       message: 'حال نکردم با این محصول',
       user: 'علی',
-      meUser: true,
+      data:'01,12,01 13:00',
+      meUser: false,
       profile: '/_nuxt/public/images/pro1.jpg',
     }, user3: {
       message: 'واقعا عالیه بسیار با کیفیت چه ارسال عالیه ',
       user: 'مهرداد',
+      data:'01,12,01 13:00',
       meUser: false,
       profile: '/_nuxt/public/images/pro2.jpg',
     }, user4: {
       message: 'واقعا ناراضی هستم خوشم نیامد ',
       user: 'گلناز',
+      data:'01,12,01 13:00',
       meUser: false,
       profile: '/_nuxt/public/images/pro3.jpg  ',
-    }
+    },
 
   },
   len: 4
@@ -36,8 +40,8 @@ const typeComment = ref({
   <section>
     <div class="container my-2">
 
-      <div class="col-12 border border-warning-subtle border-3 rounded  d-flex flex-column">
-        <div class="comment-header w-100  px-3 py-1 text-bg-light rounded-top d-flex align-items-center">
+      <div class="col-12 border border-warning-subtle border-3 rounded  d-flex flex-column overflow-hidden">
+        <div class="comment-header w-100  px-3 py-1 text-bg-light rounded-top border-bottom border-warning-subtl d-flex align-items-center">
           <img class="image-header-comment rounded-circle m-2" :src="typeComment?.product?.image"/>
 
           <h6 class="px-2 my-2">نظرات {{ typeComment?.product?.name }} <br><span
@@ -55,13 +59,19 @@ const typeComment = ref({
                 <div class="comment-body-text  p-2 mx-2 " :class="!item?.meUser ?'border-rtl':'border-ltr'">
                   <h6>{{ item?.user || 'بی نام' }}</h6>
                   <span>{{ item?.message }}</span>
+                  <br>
 
+                  <i>{{item?.data}}</i>
                 </div>
               </div>
             </li>
           </ul>
         </div>
-        <div class="">ali</div>
+        <div class="input-group">
+          <span class="input-group-text">$</span>
+          <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2">
+          <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="bi-send-arrow-down"></i></button>
+        </div>
       </div>
     </div>
   </section>
@@ -86,7 +96,9 @@ const typeComment = ref({
 .body-comment {
   background: url('https://www.ecuandkey.com/images/chat-bg.svg');
   background-position: center;
-  min-height: 30rem;
+  min-height: 25rem;
+  overflow: auto;
+
 }
 
 .body-comment img {
@@ -97,11 +109,19 @@ const typeComment = ref({
 .body-comment li {
   list-style: none;
 }
-
-.comment-body-text {
-  background: #e69c00;
+.btn {
+  border-radius: 0!important;
 }
-
+.comment-body-text {
+  background: #ffc760;
+}
+.comment-body-text i {
+  float: left;
+  color: #222831;
+  font-style: inherit;
+  font-size: 10px;
+  text-align: center;
+}
 .border-rtl {
   border-radius: 15px 15px 0 15px;
 }
