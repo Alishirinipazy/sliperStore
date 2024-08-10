@@ -6,7 +6,7 @@
     :loop="true"
     :effect="'creative'"
     :autoplay="{
-      delay: 3500,
+      delay: 2500,
       disableOnInteraction: true,
     }"
    :navigation="true"
@@ -21,9 +21,9 @@
       },
     }"
   >
-  <swiper-slide><img src="/assets/img/banner.jpg" class="d-block w-100" alt="..."></swiper-slide>
-    <swiper-slide><img src="https://dkstatics-public.digikala.com/digikala-adservice-banners/0c1badf07ffd2b368166eeb1afc255f68e421bd0_1718447231.jpg?x-oss-process=image/quality,q_95" class="d-block w-100" alt="..."></swiper-slide>
-    <swiper-slide><img src="/images/slider3.jpg" class="d-block h-100 w-100" alt="..."></swiper-slide>
+    <swiper-slide><img src="https://dkstatics-public.digikala.com/digikala-adservice-banners/9b4d2d3240a181d8744fadec0d68e68113748002_1706357574.gif?x-oss-process=image?x-oss-process=image/format,webp" class="d-block w-100" alt="..."></swiper-slide>
+    <swiper-slide><img src="https://dkstatics-public.digikala.com/digikala-adservice-banners/5734c0805d1749534a8cbc5b13eeb5bf83a24032_1722759055.jpg?x-oss-process=image/quality,q_95/format,webp" class="d-block w-100" alt="..."></swiper-slide>
+
 
  
     

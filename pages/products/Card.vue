@@ -30,7 +30,7 @@
                                                             {{ numberFormat(item.sale_price) }}
                                                         </span>
                                                         <span v-else>
-                                                            {{ numberFormat(item.price) }}  
+                                                            {{ numberFormat(item.price) }}
                                                             تومان
                                                         </span>
                                                         <div class="text-danger" v-if="item.is_sale">
@@ -76,7 +76,7 @@
                             </div>
                             <div class="col-12 col-md-6 d-flex justify-content-end align-items-baseline">
                                <CartAddress @set-address-id="(id)=>addressId = id" />
-                             
+
                             </div>
                         </div>
                         <div class="row justify-content-center mt-5">
@@ -94,7 +94,7 @@
                                             <li class="list-group-item d-flex justify-content-between">
                                                 <div>تخفیف :
                                                     <span class="text-danger ms-1">{{ copun.percent }}%</span>
-                                                   
+
                                                 </div>
                                                 <div class="text-danger">
                                                     {{ numberFormat((totalAmount*copun.percent)/100) }}تومان
@@ -107,7 +107,7 @@
                                                 </div>
                                             </li>
                                         </ul>
-                                        <CartPatment :coupon="copun" :addressId="addressId" :cart="allCard"/> 
+                                        <CartPatment :coupon="copun" :addressId="addressId" :cart="allCard"/>
                                     </div>
                                 </div>
                             </div>
@@ -123,7 +123,7 @@
         <template #fallback>
             <div class="gifLoading col-sm-12 col-lg-12">
                 <div class="row">
-                   
+
                 </div>
             </div>
         </template>

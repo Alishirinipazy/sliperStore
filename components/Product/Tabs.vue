@@ -1,10 +1,10 @@
 <template>
-    <section class="food_section layout_padding-bottom">
+    <section class="food_section layout_padding-bottom my-2">
         <div class="container">
             <div class="heading_container heading_center">
-                <h2>
-                    منو محصولات
-                </h2>
+                <h3>
+                    جدید ترین محصولات
+                </h3>
             </div>
 
 

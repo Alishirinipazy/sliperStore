@@ -68,7 +68,7 @@ const typeComment = ref({
           </ul>
         </div>
         <div class="input-group">
-          <span class="input-group-text">$</span>
+          <span class="input-group-text"></span>
           <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2">
           <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="bi-send-arrow-down"></i></button>
         </div>

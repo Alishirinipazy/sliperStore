@@ -1,13 +1,13 @@
 <template>
     <Slider />
-<!--    <Feachers />-->
-    <NewFeaturs />
     <ProductTabs />
+    <NewFeaturs />
     <Abouts />
     <Contactauth />
-    
 </template>
 <script setup>
+
+
 useHead({
     title: 'صفحه اصلی'
 })

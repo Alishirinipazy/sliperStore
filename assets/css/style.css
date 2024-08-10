@@ -115,7 +115,7 @@ a:focus {
 
 /*header section*/
 .hero_area {
-  position: fixed;
+
   top: 0;
   width: 100%;
   z-index: 5;
@@ -127,8 +127,7 @@ a:focus {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  background-color: #22283142;
-  border-radius: 0 0 20% 20%;
+  background-color: #222831;
   transition: 0.5s;
 }
 .errorPage {

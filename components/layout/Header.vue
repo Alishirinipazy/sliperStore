@@ -4,9 +4,9 @@
             <!-- header section strats -->
             <header class="header_section" >
                 <div class="container">
-                    <nav class="navbar navbar-expand-lg custom_nav-container py-3">
+                    <nav class="navbar navbar-expand-lg custom_nav-container py-1">
                         <a class="navbar-brand" href="index.html">
-                         <img src="/images/logo.png" width="200" height="80" alt="">
+                         <img src="/images/logo.png" width="200" height="90" alt="">
                         </a>
 
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -59,8 +59,9 @@ import { useCardStor } from "../../store/cart";
 const card = useCardStor();
 const { authUser }=useAuth();
 const nameUser = ref(null)
+
 if (authUser.value) {
     nameUser.value = authUser._object.$sauth_user.name
-} 
+}
 
 </script>

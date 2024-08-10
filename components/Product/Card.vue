@@ -14,7 +14,7 @@
                 <div class="options">
                     <h6 v-if="props.product.is_sale">
                         <del> {{numberFormat(props.product.price)  }} تومان</del>
-        
+
                         <span>تومان</span>
                     </h6>
                     <h6 v-else>
