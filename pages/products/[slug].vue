@@ -41,8 +41,8 @@
 
                                 </div>
                                 <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="/images/l2Food.gif  " class="d-block " 
+                                    <div class="carousel-item  active">
+                                        <img src="/images/l2Food.gif  " class="img-fluid"
                                             v-img="product?.data?.primary_image" :alt="product?.data?.name">
                                     </div>
                                     <div class="carousel-item" v-for="(image, index) in product?.data?.images" :key="index">
@@ -81,7 +81,7 @@
     </section>
 </template>
 <script setup>
-import { useCardStor } from "../../store/cart";
+import { useCardStor } from "@/store/cart.js";
 const route = useRoute();
 const { public: { apiBase } } = useRuntimeConfig();
 const { data: product } = useFetch(`${apiBase}/products/${route.params.slug}`)
@@ -95,6 +95,14 @@ function addToCart(product) {
     cart.addToCart(product, quantity.value);
 }
 useHead({
-  title: route.params.slug
+  title: route.params.slug,
+})
+useSeoMeta({
+  title: product?.data?.name,
+  ogTitle: product?.data?.name,
+  description: product?.data?.description,
+  ogDescription: product?.data?.description,
+  ogImage: product?.data?.primary_image,
+  twitterCard: 'summary_large_image',
 })
 </script>

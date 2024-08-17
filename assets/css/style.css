@@ -513,7 +513,9 @@ a:focus {
 .food_section .filters_menu li a {
   color: #000000;
 }
+
 .food_section .box {
+
   position: relative;
   margin-top: 25px;
   background-color: #ffffff;
@@ -524,6 +526,7 @@ a:focus {
 }
 
 .food_section .box .img-box {
+
   background-color: #222831;
   height: 255px;
 }

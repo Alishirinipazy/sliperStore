@@ -1,8 +1,8 @@
 <template>
-    <div class="box">
+    <div class="box" style="  border: 1px solid #222831;">
         <div>
             <div class="img-box">
-                <img src="/images/l2Food.gif  " v-img="props.product.primary_image" :alt="props.product.name">
+                <img src="/images/l2Food.gif" v-img="props.product.primary_image" :alt="props.product.name">
             </div>
             <div class="detail-box">
                 <h5>
