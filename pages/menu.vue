@@ -15,53 +15,62 @@
               </button>
             </div>
           </div>
+          <button class="navbar-toggler d-block d-lg-none d-sm-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar " aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="bi-filter-square-fill"></span>
+            فیلتر محصولات
+          </button>
           <hr>
+
+
+          <div class="offcanvas-sm offcanvas-end" tabindex="1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="filter-list">
-            <div class="form-label">
-              دسته بندی
+              <div class="form-label">
+                دسته بندی
+              </div>
+              <ul>
+                <li v-for="category in categories.data" :key="category.id"
+                    @click="handleFilter({ category: category.id })" class="my-2 cursor-pointer"
+                    :class="{ 'filter-list-active': route.query.hasOwnProperty('category') && route.query.category == category.id }">
+                  {{ category.name }}
+                </li>
+              </ul>
             </div>
-            <ul>
-              <li v-for="category in categories.data" :key="category.id"
-                  @click="handleFilter({ category: category.id })" class="my-2 cursor-pointer"
-                  :class="{ 'filter-list-active': route.query.hasOwnProperty('category') && route.query.category == category.id }">
-                {{ category.name }}
-              </li>
-            </ul>
-          </div>
-          <hr>
-          <div>
-            <label class="form-label">مرتب سازی</label>
-            <div class="form-check my-2">
-              <input class="form-check-input" @click="handleFilter({ sortBy: 'max' })"
-                     :checked="route.query.hasOwnProperty('sortBy') && route.query.sortBy == 'max'"
-                     type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-              <label class="form-check-label cursor-pointer" for="flexRadioDefault1">
-                بیشترین قیمت
-              </label>
-            </div>
-            <div class="form-check my-2">
-              <input class="form-check-input" @click="handleFilter({ sortBy: 'min' })"
-                     :checked="route.query.hasOwnProperty('sortBy') && route.query.sortBy == 'min'"
-                     type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-              <label class="form-check-label cursor-pointer" for="flexRadioDefault2">
-                کمترین قیمت
-              </label>
-            </div>
-            <div class="form-check my-2">
-              <input class="form-check-input" @click="handleFilter({ sortBy: 'bestseller' })"
-                     :checked="route.query.hasOwnProperty('sortBy') && route.query.sortBy == 'bestseller'"
-                     type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-              <label class="form-check-label cursor-pointer" for="flexRadioDefault3">
-                پرفروش ترین
-              </label>
-            </div>
-            <div class="form-check my-2">
-              <input class="form-check-input" @click="handleFilter({ sortBy: 'sale' })"
-                     :checked="route.query.hasOwnProperty('sortBy') && route.query.sortBy == 'sale'"
-                     type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-              <label class="form-check-label cursor-pointer" for="flexRadioDefault4">
-                با تخفیف
-              </label>
+            <hr>
+
+            <div>
+              <label class="form-label">مرتب سازی</label>
+              <div class="form-check my-2">
+                <input class="form-check-input" @click="handleFilter({ sortBy: 'max' })"
+                       :checked="route.query.hasOwnProperty('sortBy') && route.query.sortBy == 'max'"
+                       type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label cursor-pointer" for="flexRadioDefault1">
+                  بیشترین قیمت
+                </label>
+              </div>
+              <div class="form-check my-2">
+                <input class="form-check-input" @click="handleFilter({ sortBy: 'min' })"
+                       :checked="route.query.hasOwnProperty('sortBy') && route.query.sortBy == 'min'"
+                       type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                <label class="form-check-label cursor-pointer" for="flexRadioDefault2">
+                  کمترین قیمت
+                </label>
+              </div>
+              <div class="form-check my-2">
+                <input class="form-check-input" @click="handleFilter({ sortBy: 'bestseller' })"
+                       :checked="route.query.hasOwnProperty('sortBy') && route.query.sortBy == 'bestseller'"
+                       type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                <label class="form-check-label cursor-pointer" for="flexRadioDefault3">
+                  پرفروش ترین
+                </label>
+              </div>
+              <div class="form-check my-2">
+                <input class="form-check-input" @click="handleFilter({ sortBy: 'sale' })"
+                       :checked="route.query.hasOwnProperty('sortBy') && route.query.sortBy == 'sale'"
+                       type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                <label class="form-check-label cursor-pointer" for="flexRadioDefault4">
+                  با تخفیف
+                </label>
+              </div>
             </div>
           </div>
         </div>
@@ -80,7 +89,7 @@
             <div v-else>
               <div class="row gx-3">
                 <div v-for="product in data.data.products" :key="product.id" class="col-sm-6 col-lg-4 col-6">
-                  <ProductCard :product="product" />
+                  <ProductCard :product="product"/>
                 </div>
               </div>
 
@@ -90,7 +99,8 @@
                       class="page-item" :class="{ active: link.active }">
                     <button @click="handleFilter({ page: link.label })" class="page-link">{{
                         link.label
-                      }}</button>
+                      }}
+                    </button>
                   </li>
                 </ul>
               </nav>
@@ -108,12 +118,12 @@ const router = useRouter();
 const route = useRoute();
 const search = ref('')
 const query = ref({});
-const { public: { apiBase } } = useRuntimeConfig();
+const {public: {apiBase}} = useRuntimeConfig();
 
-const { data: categories } = await useFetch(`${apiBase}/categories`);
+const {data: categories} = await useFetch(`${apiBase}/categories`);
 
 query.value = route.query;
-const { data, refresh, pending } = await useFetch(() => `${apiBase}/menu`, {
+const {data, refresh, pending} = await useFetch(() => `${apiBase}/menu`, {
   query: query
 });
 
@@ -125,7 +135,7 @@ watch(route, () => {
 })
 
 function handleFilter(param) {
-  query.value = { ...route.query, ...param }
+  query.value = {...route.query, ...param}
 
   if (!param.hasOwnProperty('page')) {
     delete query.value.page
@@ -149,7 +159,8 @@ function checkSearchBox(element) {
     })
   }
 }
+
 useHead({
-  title:'محصولات'
+  title: 'محصولات'
 })
 </script>

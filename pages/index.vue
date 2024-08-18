@@ -1,8 +1,8 @@
 <template>
   <Slider/>
+  <NewFeaturs/>
   <NewProduct/>
   <ProductTabs/>
-  <NewFeaturs/>
   <Abouts/>
   <Contactauth/>
 </template>
