@@ -1233,6 +1233,9 @@ a:focus {
   height: 3rem;
 }
 
+.body-new-product {
+  background-color: #222831;
+}
 .vh-70 {
   height: 70vh !important;
 }

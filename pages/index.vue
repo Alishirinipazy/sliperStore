@@ -1,14 +1,15 @@
 <template>
-    <Slider />
-    <ProductTabs />
-    <NewFeaturs />
-    <Abouts />
-    <Contactauth />
+  <Slider/>
+  <NewProduct/>
+  <ProductTabs/>
+  <NewFeaturs/>
+  <Abouts/>
+  <Contactauth/>
 </template>
 <script setup>
 
 
 useHead({
-    title: 'صفحه اصلی'
+  title: 'صفحه اصلی'
 })
 </script>

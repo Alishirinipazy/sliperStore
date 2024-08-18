@@ -30,7 +30,7 @@
     </div>
 </template>
 <script setup>
-import {useCardStor} from "../../store/cart"
+import {useCardStor} from "@/store/cart.js"
 
 const props = defineProps(["product"]);
 const cart = useCardStor();
