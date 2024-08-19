@@ -15,14 +15,14 @@
               </button>
             </div>
           </div>
-          <button class="navbar-toggler d-block d-lg-none d-sm-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar " aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <button class="navbar-toggler d-block  d-lg-none d-md-none d-sm-block" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar " aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span class="bi-filter-square-fill"></span>
             فیلتر محصولات
           </button>
           <hr>
 
 
-          <div class="offcanvas-sm offcanvas-end" tabindex="1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-sm offcanvas-md offcanvas-end p-4" tabindex="-4" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="filter-list">
               <div class="form-label">
                 دسته بندی

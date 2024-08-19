@@ -1,7 +1,7 @@
 <template>
   <section class="card-area layout_padding">
     <div class="container">
-      <div class="row cent gy-5">
+      <div class="row cent gy-2">
         <Item v-for="(item,index) in itemFeaturs" :key="index" :itemFeaturs="item"/>
       </div>
     </div>

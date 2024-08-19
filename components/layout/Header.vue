@@ -49,9 +49,14 @@
                     </nav>
                 </div>
             </header>
+
             <!-- end header section -->
         </div>
     </div>
+  <br>
+  <br>
+  <br>
+  <br>
 
 </template>
 <script setup>
@@ -59,9 +64,27 @@ import { useCardStor } from "../../store/cart";
 const card = useCardStor();
 const { authUser }=useAuth();
 const nameUser = ref(null)
-
+const topHeader = ref(0)
 if (authUser.value) {
     nameUser.value = authUser._object.$sauth_user.name
 }
+onMounted(()=>{
+  window.onscroll = function() {scrollFunction()};
 
+  function scrollFunction() {
+    if (document.documentElement.scrollTop <= 300) {
+      topHeader.value = 0
+    } else {
+      topHeader.value =  '-120px'
+
+    }
+  }
+})
 </script>
+<style >
+.hero_area {
+  position: fixed;
+  transition: 0.5s;
+  top: v-bind(topHeader);
+}
+</style>
