@@ -4,7 +4,11 @@
       <swiper
           :modules="[SwiperAutoplay]"
           :slides-per-view="5"
-
+          :breakpoints="{
+              '320': { slidesPerView: 2 },
+              '768': { slidesPerView: 3 },
+              '1200': { slidesPerView: 5 }
+            }"
           :loop="false"
           :effect="'creative'"
           :autoplay="{
@@ -25,10 +29,10 @@
           <div class="rounded my-4  w-100 d-flex flex-column justify-content-center align-items-center"
                style="height: 22rem;background: rgb(185,141,73)">
 
-              <h5 class="text-center">
-                پرفروش ترین ها
-                <i class="bi-bag-dash-fill "></i>
-              </h5>
+            <h5 class="text-center">
+              پرفروش ترین ها
+              <i class="bi-bag-dash-fill "></i>
+            </h5>
           </div>
         </swiper-slide>
         <template v-for="(item,index) in data?.data?.products" :key="index">

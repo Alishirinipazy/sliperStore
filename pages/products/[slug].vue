@@ -6,7 +6,7 @@
                     <div class="row gy-5">
                         <div class="col-sm-12 col-lg-6">
                             <h3 class="fw-bold mb-4">{{ product?.data?.name }}</h3>
-                            <h5 v-if="!product?.data?.is_sale" class="mb-3 " >
+                            <h5 v-if="product?.data?.is_sale" class="mb-3 " >
                                 <del>{{ numberFormat(product?.data?.price) }} تومان</del>
                                 {{ numberFormat(product?.data?.sale_price) }}
                                 تومان
@@ -14,7 +14,9 @@
                                     {{ salePercent(product?.data?.price, product?.data?.sale_price) }}% تخفیف
                                 </div>
                             </h5>
-                            
+                            <h5 v-else>
+                             {{ numberFormat(product?.data?.price) }} تومان
+                            </h5>
                             <p>{{ product?.data?.description }}</p>
 
                             <div class="mt-5 d-flex">
@@ -68,7 +70,7 @@
             </div>
         </div>
     </section>
-  <Comment />
+  <Comment :productDetail="productDetail"/>
     <section class="food_section my-5">
         <div class="container">
             <div class="row gx-3">
@@ -89,6 +91,12 @@ const { data: randomProducts } = useFetch(`${apiBase}/random-products?count=4`)
 const cart = useCardStor();
 
 const quantity = ref(1)
+const productDetail = {
+  name: computed(()=>product?.value?.data?.name) ,
+  image: computed(()=>product?.value?.data?.primary_image)
+
+};
+
 
 function addToCart(product) {
     cart.remove(product.id);

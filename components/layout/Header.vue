@@ -72,7 +72,7 @@ onMounted(()=>{
   window.onscroll = function() {scrollFunction()};
 
   function scrollFunction() {
-    if (document.documentElement.scrollTop <= 300) {
+    if (document.documentElement.scrollTop <= 400) {
       topHeader.value = 0
     } else {
       topHeader.value =  '-120px'

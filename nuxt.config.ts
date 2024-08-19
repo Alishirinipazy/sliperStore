@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   },
   css: ["~/assets/css/style.css"],
   modules: ['@formkit/nuxt','@pinia/nuxt','@pinia-plugin-persistedstate/nuxt','nuxt-swiper'],
-  
+  extends: ['nuxt-emoji'],
   app: {
     // pageTransition: { name: 'page', mode: 'out-in' }, 
     head: {
