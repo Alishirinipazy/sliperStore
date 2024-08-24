@@ -56,9 +56,6 @@
     </FormKit>
 </template>
 <script setup>
-
-</script>
-<script setup>
 import { useToast } from 'vue-toastification';
 
 const toast = useToast();

@@ -47,10 +47,10 @@ const topHeader = ref(0)
 if (authUser.value) {
   nameUser.value = authUser._object.$sauth_user.name
 }
-const inputValue = ref(null)
+const inputValue = ref('')
 
 function select(emoji) {
-  inputValue.value += emoji
+    inputValue.value += emoji
 }
 
 function sendComment() {
@@ -144,7 +144,7 @@ function sendComment() {
 .body-comment {
   background: url('https://www.ecuandkey.com/images/chat-bg.svg');
   background-position: center;
-  min-height: 25rem;
+  max-height: 25rem;
   overflow: auto;
 
 }

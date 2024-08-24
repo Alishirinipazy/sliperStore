@@ -141,6 +141,7 @@ const addressId = ref(null)
 const allCard = computed(() => card.allIems)
 const totalAmount = computed(() => card.totalAmount)
 const quantity = ref(1);
+
 const copun = reactive({
     code: '',
     percent: 0

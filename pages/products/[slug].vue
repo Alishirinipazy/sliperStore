@@ -42,25 +42,26 @@
                                         :data-bs-slide-to="`${index + 1}`"></button>
 
                                 </div>
-                                <div class="carousel-inner">
-                                    <div class="carousel-item  active">
+                                <div class="carousel-inner ">
+                                    <div class="carousel-item active">
                                         <img src="/images/l2Food.gif  " class="img-fluid"
                                             v-img="product?.data?.primary_image" :alt="product?.data?.name">
                                     </div>
                                     <div class="carousel-item" v-for="(image, index) in product?.data?.images" :key="index">
-                                        <img src="/images/l2Food.gif  " class="d-block " v-img="image?.image"
+                                      
+                                        <img src="/images/l2Food.gif  " class="img-fluid" v-img="image?.image"
                                             :alt="product?.data?.name">
                                     </div>
 
                                 </div>
-                                <button class="carousel-control-prev" type="button"
-                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <button class="carousel-control-prev " type="button"
+                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="prev" >
+                                    <span class="carousel-control-prev-icon bg-warning rounded" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
                                 </button>
                                 <button class="carousel-control-next" type="button"
                                     data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="carousel-control-next-icon bg-warning rounded" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
                                 </button>
                             </div>
@@ -97,7 +98,7 @@ const productDetail = {
 
 };
 
-
+console.log(product)
 function addToCart(product) {
     cart.remove(product.id);
     cart.addToCart(product, quantity.value);

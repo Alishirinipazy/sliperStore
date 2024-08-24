@@ -5,9 +5,9 @@
             <header class="header_section" >
                 <div class="container">
                     <nav class="navbar navbar-expand-lg custom_nav-container py-1">
-                        <a class="navbar-brand" href="index.html">
+                        <nuxt-link class="navbar-brand" to="/" >
                          <img src="/images/logo.png" width="200" height="90" alt="">
-                        </a>
+                        </nuxt-link>
 
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
