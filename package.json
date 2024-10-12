@@ -11,6 +11,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxthub/core": "^0.7.27",
     "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
     "nuxt": "^3.11.2",
     "nuxt-emoji": "^1.0.2",

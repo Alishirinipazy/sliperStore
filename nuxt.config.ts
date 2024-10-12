@@ -10,7 +10,13 @@ export default defineNuxtConfig({
     transpile: ["vue-toastification"]
   },
   css: ["~/assets/css/style.css"],
-  modules: ['@formkit/nuxt','@pinia/nuxt','@pinia-plugin-persistedstate/nuxt','nuxt-swiper'],
+  modules: [
+    '@formkit/nuxt',
+    '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
+    'nuxt-swiper',
+    "@nuxthub/core"
+  ],
   extends: ['nuxt-emoji'],
   app: {
     // pageTransition: { name: 'page', mode: 'out-in' }, 
