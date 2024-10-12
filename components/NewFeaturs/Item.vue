@@ -26,7 +26,7 @@ defineProps({
   box-shadow: 0px 0px 15px #222831;
   font-family: bold;
   color: #e69c00;
-  transition: 1s;
+  transition: 0.5s;
   overflow: hidden;
 }
 

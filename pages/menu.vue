@@ -22,7 +22,7 @@
           <hr>
 
 
-          <div class="offcanvas-sm offcanvas-md offcanvas-end p-4" tabindex="-4" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div :class="['offcanvas-sm offcanvas-md offcanvas-end p-4', { show: !isCollapsed }]" tabindex="-4" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="filter-list">
               <div class="form-label">
                 دسته بندی
@@ -113,10 +113,10 @@
 </template>
 
 <script setup>
-
 const router = useRouter();
 const route = useRoute();
 const search = ref('')
+const isCollapsed = ref(true);
 const query = ref({});
 const {public: {apiBase}} = useRuntimeConfig();
 
@@ -132,6 +132,8 @@ watch(route, () => {
     query.value = {};
     refresh()
   }
+
+
 })
 
 function handleFilter(param) {
@@ -145,6 +147,7 @@ function handleFilter(param) {
     path: '/menu',
     query: query.value
   })
+
 }
 
 function checkSearchBox(element) {
@@ -158,7 +161,9 @@ function checkSearchBox(element) {
       query: query.value
     })
   }
-}
+  isCollapsed.value = !isCollapsed.value;
+  console.log('ali')
+  }
 
 useHead({
   title: 'محصولات'
